@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS/issues"
   },
-  "homepage": "https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS#readme"
+  "homepage": "https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS#readme",
+  "dependencies": {
+    "yargs": "^5.0.0"
+  }
 }
