@@ -1,0 +1,29 @@
+{
+  "name": "coursera",
+  "version": "1.0.0",
+  "description": "coursera curso nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS.git"
+  },
+  "keywords": [
+    "course",
+    "coursera",
+    "nodejs"
+  ],
+  "author": "Paulo Franca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS/issues"
+  },
+  "homepage": "https://github.com/Paulo-Sergio/Coursera-Server-side-Development-with-NodeJS#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
