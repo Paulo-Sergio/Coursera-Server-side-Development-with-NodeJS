@@ -16,7 +16,7 @@ dishRouter.route('/')
             res.json(dish);
         });
     })
-    .post(Verify.verifyOrdinaryUser, function (req, res, next) {
+    .post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
         //res.end('Will add this dish: ' + req.body.name + ' with details: ' + req.body.description);
         Dishes.create(req.body, function (err, dish) {
             if (err) throw err;
@@ -27,7 +27,7 @@ dishRouter.route('/')
             res.end('Added the dish with id: ' + id);
         });
     })
-    .delete(Verify.verifyOrdinaryUser, function (req, res, next) {
+    .delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
         //res.end('Deleting all dishes');
         Dishes.remove({}, function (err, resp) {
             if (err) throw err;
@@ -36,14 +36,14 @@ dishRouter.route('/')
     });
 
 dishRouter.route('/:dishId')
-    .get(function (req, res, next) {
+    .get(Verify.verifyOrdinaryUser, function (req, res, next) {
         //res.end('Will send details of the dish: ' + req.params.dishId + ' to you');
         Dishes.findById(req.params.dishId, function (err, dish) {
             if (err) throw err;
             res.json(dish);
         });
     })
-    .put(function (req, res, next) {
+    .put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
         //res.write('Updating the dish: ' + req.params.dishId + '\n');
         //res.end('Will update the dish: ' + req.body.name + ' with details ' + req.body.description);
         Dishes.findByIdAndUpdate(req.params.dishId, {
@@ -55,7 +55,7 @@ dishRouter.route('/:dishId')
                 res.json(dish);
             });
     })
-    .delete(function (req, res, next) {
+    .delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
         //res.end('Deleting dish: ' + req.params.dishId);
         Dishes.findByIdAndRemove(req.params.dishId, function (err, resp) {
             if (err) throw err;
